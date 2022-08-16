@@ -1,0 +1,47 @@
+._title {
+  font-weight: 700;
+  line-height: 89.2px;
+  color: rgba(86, 109, 238, 0.8);
+  -webkit-text-stroke: 1px #566dee;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  &._white {
+    color: hsl(var(--clr-white));
+  }
+  @media (min-width: $mobileSmall) {
+    font-size: 2.625rem;
+  }
+  @media (min-width: $mobile) {
+    font-size: 3rem;
+  }
+  @media (min-width: $tablet) {
+    //  font-size: rem(58);
+    color: #566dee;
+    -webkit-text-stroke: 3px #566dee;
+  }
+  @media (min-width: $notebook) {
+    font-size: 2.813rem;
+    line-height: 50.18px;
+  }
+  @media (min-width: $pc) {
+    font-size: 5rem;
+  }
+  @media (max-width: $tablet) {
+    text-align: center;
+  }
+}
+._text {
+  font-size: max(rem(14), 1.3vw);
+}
+// ._ff-sans-normal {
+//    font-family: var(--ff-sans-normal);
+// }
+// ._ff-serif {
+//    font-family: var(--ff-serif);
+// }
+._grid {
+  display: grid;
+}
+._flex {
+  display: flex;
+}

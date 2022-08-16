@@ -1,0 +1,206 @@
+//====================================================================================================
+.footer {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 26, 255, 0.6) 0%,
+    rgba(0, 240, 255, 0.6) 74.3%
+  );
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+  position: relative;
+  overflow: hidden;
+  min-height: 55vh;
+  @media (max-width: $tablet) {
+    min-height: 30vh;
+  }
+  @media (max-width: $mobileSmall) {
+    min-height: 20vh;
+  }
+  &__logo {
+    @include adaptiveValue('max-width', 213, 120);
+  }
+  &__top {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    min-height: 45vh;
+    @media (max-width: $tablet) {
+      min-height: 20vh;
+    }
+    @media (max-width: $mobileSmall) {
+      min-height: 15vh;
+    }
+    > img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+      @media (max-width: $tablet) {
+        // object-fit: cover;
+      }
+    }
+  }
+  &__bottom {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    min-height: 10vh;
+    @media (max-width: $mobileSmall) {
+      min-height: 5vh;
+    }
+    > img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+      @media (max-width: em(520)) {
+        // object-fit: contain;
+      }
+    }
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: rem(75);
+    background: linear-gradient(
+      111.04deg,
+      rgba(0, 255, 255, 0.9) 1.18%,
+      rgba(0, 224, 255, 0.9) 100%
+    );
+    filter: blur(200px);
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: hsl(var(--clr-blue-btn) / 0.3);
+    filter: blur(500px);
+  }
+
+  &__shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0.8;
+  }
+
+  &__inner {
+    z-index: 2;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    min-height: rem(385);
+    flex-direction: column;
+    @include adaptiveValue('row-gap', 55, 15);
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__social-list {
+    align-items: center;
+    @include adaptiveValue('column-gap', 62, 20);
+  }
+
+  &__social-item {
+    flex: 0 1 rem(60);
+  }
+
+  &__social-link {
+    img {
+      max-width: 100%;
+      transition: transform 0.3s ease;
+      @media (any-hover: hover) {
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      @include adaptiveValue('max-height', 51, 14);
+    }
+  }
+
+  &__list {
+    align-items: center;
+    column-gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: rem(5);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.125;
+    color: hsl(var(--clr-white));
+    position: relative;
+    text-transform: uppercase;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: hsl(var(--clr-white));
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: width 0.3s cubic-bezier(0.47, 0, 0.74, 0.71);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+    @media (max-width: $pc) {
+      font-size: rem(22);
+    }
+    @media (max-width: $notebook) {
+      font-size: rem(18);
+    }
+    @media (max-width: $mobile) {
+      font-size: rem(16);
+    }
+    @media (max-width: $mobileSmall) {
+      font-size: rem(12);
+    }
+  }
+
+  &__copyright {
+    font-size: rem(8);
+    line-height: 22.3px;
+    color: hsl(var(--clr-white));
+    @media (min-width: $mobileSmall) {
+      line-height: 17.84px;
+      font-size: 0.75rem;
+    }
+    @media (min-width: $tablet) {
+      font-size: 1rem;
+      padding-top: 13%;
+    }
+    @media (min-width: $notebook) {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+//====================================================================================================
